@@ -3,7 +3,10 @@ import mysql from "mysql2/promise";
 import { Signale } from "signale";
 
 dotenv.config();
-const signale = new Signale();
+const sigoptions = {
+    secrets: ["([0-9]{4}-?)+"]
+}
+const signale = new Signale(sigoptions);
 
 const dbconfig = {
     host: process.env.HOST,

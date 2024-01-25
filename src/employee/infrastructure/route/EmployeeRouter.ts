@@ -1,7 +1,6 @@
 import express from "express";
 
-import { createEmployeeController } from "../dependency/DependenciesEmployee";
-import { getAllEmployeeController } from "../dependency/DependenciesEmployee";
+import { createEmployeeController, getAllEmployeeController } from "../dependency/DependenciesEmployee";
 
 export const employeeRouter = express.Router();
 
