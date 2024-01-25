@@ -1,0 +1,14 @@
+###
+GET http://localhost:3000/clients HTTP/1.1
+
+###
+POST http://localhost:3000/clients HTTP/1.1
+Content-Type: "application/json"
+
+{
+    "nombre":"Luis",
+    "apPaterno":"Gutiérrez",
+    "apMaterno":"Aguilar",
+    "edad":19,
+    "celular":"9613009874"
+}
