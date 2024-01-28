@@ -1,4 +1,4 @@
-import { CreateClientController } from "../controllers/createClientController";
+import { CreateClientController } from "../controllers/CreateClientController";
 import { CreateClientUseCase } from "../../application/methods/CreateClientUseCase";
 import { GetAllClientsController } from "../controllers/GetAllClientController";
 import { GetAllClientsUseCase } from "../../application/methods/GetAllClientUseCase";
