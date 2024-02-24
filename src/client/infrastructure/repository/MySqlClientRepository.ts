@@ -18,7 +18,8 @@ export class MySqlClientRepository implements ClientRepository {
                     client.apPaterno,
                     client.apMaterno,
                     client.edad,
-                    client.celular
+                    client.celular,
+                    client.password
                 )
             );
         } catch (error) {
@@ -32,14 +33,15 @@ export class MySqlClientRepository implements ClientRepository {
         apPaterno: string,
         apMaterno: string,
         edad: number,
-        celular: string 
+        celular: string,
+        password: string 
     ): Promise<Client | null> {
-        const sql = "INSERT INTO clientes (nombre, apPaterno, apMaterno, edad, celular) VALUES (?,?,?,?,?)";
-        const params: any[] = [nombre, apPaterno, apMaterno, edad, celular];
+        const sql = "INSERT INTO clientes (nombre, apPaterno, apMaterno, edad, celular, password) VALUES (?,?,?,?,?,?)";
+        const params: any[] = [nombre, apPaterno, apMaterno, edad, celular, password];
 
         try {
             const [result]: any = await query(sql, params);
-            return new Client(result.insertId, nombre, apPaterno, apMaterno, edad, celular);
+            return new Client(result.insertId, nombre, apPaterno, apMaterno, edad, celular, password);
         } catch (error) {
             console.log(error);
             return null;

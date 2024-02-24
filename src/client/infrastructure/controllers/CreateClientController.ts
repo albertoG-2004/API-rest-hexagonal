@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { CreateClientUseCase } from "../../application/methods/CreateClientUseCase";
+import dotenv from "dotenv";
 
 export class CreateClientController {
     constructor(readonly createClientUseCase: CreateClientUseCase) {}
@@ -13,7 +14,8 @@ export class CreateClientController {
                 data.apPaterno,
                 data.apMaterno,
                 data.edad,
-                data.celular
+                data.celular,
+                data.password
             );
 
             if(client){
@@ -25,7 +27,8 @@ export class CreateClientController {
                         apPaterno: client?.apPaterno,
                         apMaterno: client?.apMaterno,
                         edad: client?.edad,
-                        celular: client?.celular
+                        celular: client?.celular,
+                        password: client?.password
                     },
                 });
             }

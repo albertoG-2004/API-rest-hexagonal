@@ -7,6 +7,7 @@ export interface ClientRepository {
         apPaterno: string,
         apMaterno: string,
         edad: number,
-        celular: string 
+        celular: string,
+        password: string
     ): Promise<Client | null>;
 }

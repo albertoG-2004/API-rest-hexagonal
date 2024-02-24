@@ -5,6 +5,7 @@ export class Client{
         readonly apPaterno: string,
         readonly apMaterno: string,
         readonly edad: number,
-        readonly celular: string 
+        readonly celular: string,
+        readonly password: string
     ) {}
 }

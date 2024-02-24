@@ -44,4 +44,17 @@ export class MySqlEmployeeRepository implements EmployeeRepository {
         return null;
     }
   }
+
+  async deleteEmployee(celular: string): Promise<boolean | null> {
+      const sql = "DELETE FROM empleados WHERE celular = ?";
+      const params: any[] = [celular];
+
+      try {
+        const [result]: any = await query(sql, params);
+        return result.affectedRows > 0;
+      } catch (error) {
+        console.log(error);
+        return null
+      }
+  }
 }

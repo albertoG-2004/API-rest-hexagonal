@@ -10,4 +10,5 @@ export interface EmployeeRepository {
     celular: string,
     rol: string
   ): Promise<Employee | null>;
+  deleteEmployee(celular: string): Promise<boolean | null>;
 }
