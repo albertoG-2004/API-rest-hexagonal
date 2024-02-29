@@ -7,7 +7,7 @@ export class CreateClientController {
 
     async run(req: Request, res: Response){
         const data = req.body;
-        console.log(data);
+        
         try {
             const client = await this.createClientUseCase.run(
                 data.nombre,

@@ -7,7 +7,6 @@ export class GetAllClientsController {
     async run(req: Request, res:Response){
         try {
             const clients = await this.getAllClientsUseCase.run();
-            console.log(clients);
             if (clients) {
                 res.status(200).send({
                     status: "success",

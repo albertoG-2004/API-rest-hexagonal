@@ -1,7 +1,8 @@
 import { EncriptService }  from "../../application/services/EncriptService";
 import * as bcrypt from 'bcrypt';
-import dotenv from 'dotenv';
-const saltRounds = process.env.SALT_ROUNDS ?? "";
+
+const auxSaltRounds = process.env.SALT_ROUNDS ?? "";
+const saltRounds = Number(auxSaltRounds);
 
 export class EncriptServiceHelper implements EncriptService{
     encriptPassword(password: string): string {

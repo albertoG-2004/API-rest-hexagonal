@@ -1,10 +1,10 @@
 import { Client } from "../../domain/entity/Client";
 import { NotificationNewClient } from "../../infrastructure/servicesRabbitMQ/NotificationNewClient";
 
-export class NotificationNewClientUseCase{
-    constructor(readonly serviceNotifications: NotificationNewClient) {}
+export class NotificationNewClientUseCase {
+  constructor(readonly serviceNotifiacion: NotificationNewClient) {}
 
-    async run(client: Client){
-        await this.serviceNotifications.sendNotification(client);
-    }
+  async run(client: Client) {
+    await this.serviceNotifiacion.sendNotification(client);
+  }
 }

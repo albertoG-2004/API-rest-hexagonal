@@ -7,7 +7,7 @@ export class GetAllClientsUseCase {
     async run(): Promise<Client[] | null> {
         try {
             const result = await this.clientRepository.getAll();
-            console.log(result);
+            
             return result;
         } catch (error) {
             console.log(error);
